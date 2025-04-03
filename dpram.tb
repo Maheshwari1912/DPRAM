@@ -1,0 +1,22 @@
+module dpram_tb();
+reg clk;
+reg wr1,wr2;
+reg [3:0] addr1, addr2;
+reg [7:0] data_in1, data_in2;
+wire [7:0] data_out1, data_out2;
+dual_port_ram dut(clk,wr1,wr2,addr1,addr2,data_in1,data_in2,data_out1,data_out2);
+always #5 clk=~clk;
+initial begin
+  clk=0; wr1=0; wr2=0; addr1=0; addr2=0; data_in1=0; data_in2=0; #10;
+  wr1=1; addr1=4'b0000; data_in1=8'hAA; #10;
+  wr1=1; addr1=4'b0001; data_in1=8'hBB; #10;
+  wr1=1; addr1=4'b0010; data_in1=8'hCC; #10;
+  wr2=1; addr2=4'b0100; data_in2=8'hDD; #10;
+  wr2=1; addr2=4'b0101; data_in2=8'hEE; #10;
+  wr1=0; addr1=4'b0000;
+  wr2=-; addr2=4'b0100;#10;
+  addr1=4'b0001; addr2=4'b0101;#10;
+  addr1=4'b0010; addr2=4'b0001;#10;
+  $finish;
+end
+  endmodule
