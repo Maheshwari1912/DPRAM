@@ -10,6 +10,8 @@ It is commonly used in applications such as high-speed processors, video process
 
 **simulation results:**
 
+![image](https://github.com/user-attachments/assets/45d6f4e9-aaad-4dfb-9ae6-90fc6ea46e77)
 
 
 **schematic:**
+![image](https://github.com/user-attachments/assets/192be9f6-a15c-41db-99e5-3e61acce7af3)
